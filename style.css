@@ -56,3 +56,15 @@ footer {
     padding: 18px;
   }
 }
+
+.maps-btn {
+  display: block;
+  max-width: 260px;
+  margin: 20px auto;
+  background: #ff6608;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  padding: 14px;
+  border-radius: 6px;
+}
