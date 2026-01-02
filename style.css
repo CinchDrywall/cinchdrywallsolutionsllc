@@ -40,6 +40,39 @@ footer {
   background: rgba(0, 0, 0, 0.88);
   color: white;
 }
+.maps-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin: 20px auto;
+  background: #ff6608;
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+.maps-icon-btn:hover {
+  transform: scale(1.05);
+}
+.social-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin: 20px auto;
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+.facebook-btn {
+  background: #1877f2;
+}
+
+.social-icon-btn:hover {
+  transform: scale(1.05);
+}
 
 @media (max-width: 768px) {
   header h1 {
