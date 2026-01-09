@@ -64,6 +64,26 @@
     <li>Texture Application & Removal</li>
   </ul>
 </section>
+  <section class="before-after">
+  <h2>Before & After</h2>
+
+  <div class="slider">
+    <button class="arrow left" onclick="prevSlide()">‹</button>
+
+    <div class="slide active">
+      <div class="label before">Before</div>
+      <img src="before1.jpg" alt="Drywall before repair">
+    </div>
+
+    <div class="slide">
+      <div class="label after">After</div>
+      <img src="after1.jpg" alt="Drywall after repair">
+    </div>
+
+    <button class="arrow right" onclick="nextSlide()">›</button>
+  </div>
+</section>
+
 
 <section>
   <h2>Why Choose Cinch Drywall?</h2>
@@ -80,6 +100,38 @@
   <p>📧 <a href="mailto:CinchDrywallSolutions@gmail.com" style="color: inherit; text-decoration: none;">CinchDrywallSolutions@gmail.com</a></p>
 
 </footer>
+
+  <script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  // Swipe support for mobile
+  let startX = 0;
+  document.querySelector('.slider').addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+  });
+
+  document.querySelector('.slider').addEventListener('touchend', e => {
+    let endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) nextSlide();
+    if (endX - startX > 50) prevSlide();
+  });
+</script>
 
 </body>
 </html>
